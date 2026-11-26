@@ -1,0 +1,36 @@
+{
+  "name": "elite-arquitectura",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "probar:sql": "node pruebas/sql.test.mjs",
+    "probar:ia": "node --test pruebas/ia.test.ts",
+    "tipos": "tsc -p servidor/tsconfig.json",
+    "probar:acceso": "node --test pruebas/acceso.test.ts",
+    "probar:usuarios": "node --test pruebas/usuarios.test.ts",
+    "probar:panel": "node --test pruebas/panel.test.ts",
+    "dev": "next dev servidor",
+    "build": "next build servidor",
+    "start": "next start servidor",
+    "probar:e2e": "next build servidor && node --test --test-concurrency=1 pruebas/acceso.e2e.mjs",
+    "probar:todo": "npm run tipos && npm run probar:acceso && npm run probar:usuarios && npm run probar:panel && npm run probar:marcas && npm run probar:tablero && npm run probar:secciones && npm run probar:sql && npm run probar:ia && npm run probar:e2e",
+    "probar:marcas": "node --test pruebas/marcas.test.ts",
+    "probar:tablero": "node --test pruebas/tablero.test.ts",
+    "probar:secciones": "node --test pruebas/secciones.test.ts"
+  },
+  "dependencies": {
+    "@supabase/ssr": "^0.12.7",
+    "@supabase/supabase-js": "^2",
+    "next": "^16.4.6",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.5.16",
+    "@types/node": "^22",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "playwright": "^1.50.0",
+    "typescript": "^5"
+  }
+}
