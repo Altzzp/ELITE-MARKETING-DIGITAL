@@ -10,7 +10,7 @@ export default async function LayoutApp({ children }: { children: React.ReactNod
     <div className="tema" data-theme={tema}>
       <a className="salto" href="#contenido">Saltar al contenido</a>
       <header className="barra">
-        <div className="marca"><span className="logo" aria-hidden="true">É</span><div><b>Élite Digital Marketing</b><span>{s.agencia}</span></div></div>
+        <div className="marca"><img src="/logo-elite.png" alt="Élite Digital Marketing" className="logo" /><div><b>Élite Digital Marketing</b><span>{s.agencia}</span></div></div>
         <div className="persona">
           <div className="datos"><b>{s.perfil.nombre}</b><span>{ETIQUETA_ROL[s.perfil.rol]}</span></div>
           <form action={cerrarSesion}><button className="btn" type="submit">Cerrar sesión</button></form>
